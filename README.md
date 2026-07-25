@@ -2,17 +2,31 @@
 
 A modular CHIP-8 interpreter written in Rust.
 
-This project explores emulator architecture through a clean separation of hardware components, instruction decoding, and execution. Rather than pursuing maximum performance, it emphasizes readability, maintainability, and explicit design decisions while remaining compatible with common CHIP-8 software.
+This project explores emulator architecture through a clean separation of hardware components, instruction decoding, and execution.
 
-<p align="center">
-  <img src="docs/timendus_welcome.png" alt="Timendus welcome logo on emulator">
-  Timendus' Chip8 Logo
-</p>
+Rather than pursuing maximum performance, the implementation emphasizes readability, maintainability, strong typing, and explicit design decisions while remaining compatible with common CHIP-8 software.
 
-<p align="center">
-  <img src="docs/corax_opcodes.png" alt="Corax Opcodes running on the emulator">
-  Corax opcode tests
-</p>
+![Rust](https://img.shields.io/badge/Rust-2024-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## Table of Contents
+
+- [Highlights](#highlights)
+- [Screenshots](#screenshots)
+- [Motivation](#motivation)
+- [Technologies](#technologies)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Building](#building)
+- [Controls](#controls)
+- [Compatibility](#compatibility)
+- [Design Goals](#design-goals)
+- [Repository History](#repository-history)
+- [Scope](#scope)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ---
 
@@ -27,6 +41,28 @@ This project explores emulator architecture through a clean separation of hardwa
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/timendus_welcome.png" alt="timendus logo on emulator">
+</p>
+
+<p align="center">
+  <em>Timendus CHIP-8 Test Suite</em>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="docs/corax_opcodes.png" alt="corax opcodes on emulator">
+</p>
+
+<p align="center">
+  <em>Corax Opcode Test</em>
+</p>
+
+---
+
 ## Motivation
 
 This project began as one of my earlier Rust experiments and was later revisited with the goal of turning it into a polished, maintainable codebase.
@@ -37,13 +73,10 @@ The result is an emulator that serves both as a functional CHIP-8 interpreter an
 
 ---
 
-## Repository History
+## Technologies
 
-This repository represents a refined snapshot of the project rather than its original development history.
-
-The original implementation evolved over multiple local experiments before being refactored into its current architecture. During cleanup, the project was reorganized, documented, and simplified before being published.
-
-As a result, the Git history should not be interpreted as a chronological development log of the emulator.
+- Rust
+- SDL2
 
 ---
 
@@ -77,6 +110,7 @@ src
 │   └── Built-in CHIP-8 font
 │
 ├── components
+│   ├── mod.rs
 │   ├── display.rs
 │   ├── keyboard.rs
 │   ├── memory.rs
@@ -127,7 +161,7 @@ Press **Esc** to quit.
 
 ## Compatibility
 
-Successfully tested with
+Validated using
 
 - IBM Logo
 - Timendus CHIP-8 Test Suite
@@ -151,20 +185,19 @@ over premature optimization.
 
 ---
 
+## Repository History
+
+The project originated as a collection of local experiments and was later extensively refactored into its current architecture before being published.
+
+As a result, the public repository reflects the final refined implementation rather than the project's earliest development history..
+
+---
+
 ## Scope
 
-The objective of this project is to implement a clean and readable CHIP-8 interpreter.
+The current implementation targets the original CHIP-8 specification.
 
-It intentionally prioritizes:
-
-- Readability
-- Clear architecture
-- Maintainability
-- Correctness on common CHIP-8 software
-
-over supporting every historical interpreter variant or extension.
-
-Features such as configurable quirk profiles, Super-CHIP, XO-CHIP, debugging tools, and audio output are intentionally left as future extensions.
+Behavioral compatibility decisions are documented in `docs/QUIRKS.md`.
 
 ---
 
